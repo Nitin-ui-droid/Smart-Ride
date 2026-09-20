@@ -2,6 +2,8 @@
 
 RideMitra is a ride-sharing app prototype. The current version works as a browser-only demo using localStorage.
 
+**Live Demo:** https://ride-mitra-ada4a.web.app
+
 ## Real app version
 
 To make it a real multi-user app, connect it to Firebase or Supabase and replace the localStorage logic with a backend API.
