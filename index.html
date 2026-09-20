@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RideMitra — Share the ride, share the cost</title>
+<meta name="description" content="RideMitra is a peer-to-peer carpooling community. Publish empty seats or find someone already heading your way.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="topbar container">
+    <a href="index.html" class="brand">
+        <span class="brand-mark">R</span> RideMitra
+    </a>
+    <nav class="nav-links">
+        <a href="find-ride.html">Find a ride</a>
+        <a href="offer-ride.html">Offer a ride</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about">About</a>
+    </nav>
+    <button class="nav-toggle" id="landingMenuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="signup.html" class="btn btn-primary">Get started</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero container">
+        <div class="hero-copy">
+            <span class="eyebrow">Peer-to-peer carpooling</span>
+            <h1>Someone's already driving your route. Split the fuel, not the car.</h1>
+            <p class="lede">RideMitra connects drivers with empty seats to people heading the exact same way — same city, same college run, same highway stretch. Publish a ride in a minute, or find one leaving in ten.</p>
+            <div class="hero-ctas">
+                <a href="find-ride.html" class="btn btn-primary">Find a ride</a>
+                <a href="offer-ride.html" class="btn btn-ghost">Offer a ride</a>
+            </div>
+            <div class="hero-stats">
+                <div><strong>1</strong><span>seat, at a time</span></div>
+                <div><strong>0%</strong><span>commission taken</span></div>
+                <div><strong>&lt;1 min</strong><span>to publish a ride</span></div>
+            </div>
+        </div>
+        <div class="hero-stage" id="heroStage" aria-hidden="true">
+            <span class="hero-stage-caption">Live route preview</span>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">How it works</span>
+                <h2>Three steps, no dispatcher in between</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-index">01</div>
+                    <h3>Search or publish</h3>
+                    <p>Tell us where you're headed, or list your own empty seats with your route and time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-index">02</div>
+                    <h3>Pick a match</h3>
+                    <p>Compare departure times, price per seat, and the vehicle before you commit.</p>
+                </div>
+                <div class="step">
+                    <div class="step-index">03</div>
+                    <h3>Travel together</h3>
+                    <p>Book the seat, meet at the pickup point, and split the cost of a trip you were both already making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="route-rule container">
+
+    <section>
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Why RideMitra</span>
+                <h2>Built for the trip you're already taking</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-road"></i>
+                    <h3>Real routes, not detours</h3>
+                    <p>Rides are listed by the drivers actually making that trip — no rerouting to pick up strangers across town.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <h3>You set the price</h3>
+                    <p>Drivers price a seat to cover fuel and tolls, not to run a taxi service. No surge, no platform cut.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Fast to publish, fast to book</h3>
+                    <p>A ride goes live in under a minute. Booking one takes a single tap and a confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="cta-band">
+                <div class="creator-band">
+                    <div class="creator-avatar">NP</div>
+                    <div>
+                        <span class="eyebrow" style="margin-bottom:6px;">Meet the creator</span>
+                        <h3 style="margin-bottom:6px;">Nitin Pandey — Founder &amp; Lead Developer</h3>
+                        <p style="margin-bottom:0;">Building RideMitra to make shared travel simpler and more affordable for everyone.</p>
+                        <div class="tag-row">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">AI / ML</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;">
+                    <a href="https://github.com/Nitin-ui-droid" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nitin-pandey-a2958a30a/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-band" style="justify-content:center;text-align:center;flex-direction:column;">
+                <h2 style="margin-bottom:10px;">Your next trip is somebody else's empty seat.</h2>
+                <p style="margin-bottom:24px;">Find a ride in seconds, or publish yours before you leave.</p>
+                <div class="hero-ctas" style="margin:0;">
+                    <a href="find-ride.html" class="btn btn-primary">Find a ride</a>
+                    <a href="offer-ride.html" class="btn btn-ghost">Offer a ride</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="container">
+    <div class="brand">
+        <span class="brand-mark">R</span> RideMitra
+    </div>
+    <span>© 2026 RideMitra. Share the ride. Share the cost.</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+<script src="hero3d.js"></script>
+</body>
+</html>

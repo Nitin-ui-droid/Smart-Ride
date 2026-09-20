@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — RideMitra</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-auth="required">
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="app-shell">
+    <aside class="side-nav" id="sideNav">
+        <a href="index.html" class="brand"><span class="brand-mark">R</span> RideMitra</a>
+        <a href="dashboard.html" class="side-link"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="find-ride.html" class="side-link"><i class="fa-solid fa-magnifying-glass"></i> Find a ride</a>
+        <a href="offer-ride.html" class="side-link"><i class="fa-solid fa-square-plus"></i> Offer a ride</a>
+        <a href="notifications.html" class="side-link"><i class="fa-regular fa-bell"></i> Notifications</a>
+        <a href="account.html" class="side-link"><i class="fa-solid fa-user"></i> Account</a>
+        <a href="settings.html" class="side-link"><i class="fa-solid fa-gear"></i> Settings</a>
+        <div class="side-foot">
+            <button class="side-link" data-logout style="width:100%;background:none;border:none;cursor:pointer;text-align:left;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+            </button>
+        </div>
+    </aside>
+
+    <main class="app-main">
+        <div class="app-topbar">
+            <div style="display:flex;align-items:center;gap:14px;">
+                <button class="mobile-menu-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+                <div>
+                    <span class="eyebrow" style="margin:0;">Preferences</span>
+                    <h2 style="margin:0;">Settings</h2>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+                <div class="notif-wrap">
+                    <button class="notif-btn" id="notifBtn" aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notif-badge" data-notification-count>0</span>
+                    </button>
+                    <div class="notif-panel" id="notificationPanel">
+                        <h3 style="font-size:1rem;margin-bottom:12px;">Notifications</h3>
+                        <div id="notificationList"></div>
+                    </div>
+                </div>
+                <div class="avatar-chip">
+                    <div class="avatar-circle" data-user-initial>R</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-sections">
+            <div class="settings-card">
+                <h3>Profile</h3>
+                <form id="settingsForm" novalidate>
+                    <div class="field">
+                        <label for="settingsName">Display name</label>
+                        <input type="text" id="settingsName" required>
+                    </div>
+                    <div class="field">
+                        <label for="settingsEmail">Email</label>
+                        <input type="email" id="settingsEmail" disabled>
+                    </div>
+                    <div class="field">
+                        <label for="settingsPhone">Phone number</label>
+                        <input type="tel" id="settingsPhone" required>
+                    </div>
+                    <div class="field">
+                        <label for="settingsPassword">New password</label>
+                        <input type="password" id="settingsPassword" placeholder="Leave empty to keep current password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save settings</button>
+                </form>
+            </div>
+
+            <div class="settings-card">
+                <h3>Security</h3>
+                <div class="switch-row">
+                    <div>
+                        <strong>Face ID / biometrics</strong>
+                        <small>Use quick unlock on supported devices</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Login alerts</strong>
+                        <small>Get notified of new sign-ins</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Trusted devices</strong>
+                        <small>Manage recognized devices</small>
+                    </div>
+                    <button type="button" class="btn btn-ghost">View</button>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>Notifications</h3>
+                <div class="switch-row">
+                    <div>
+                        <strong>Push notifications</strong>
+                        <small>Trip reminders and booking updates</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="notifyPush" checked><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Email alerts</strong>
+                        <small>Weekly summaries and account updates</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="notifyEmail" checked><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Ride updates</strong>
+                        <small>Driver replies and booking changes</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="notifyRide" checked><span class="slider"></span></label>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>Privacy</h3>
+                <div class="switch-row">
+                    <div>
+                        <strong>Private profile</strong>
+                        <small>Hide profile from other riders</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="privacyProfile"><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Location access</strong>
+                        <small>Use precise pick-up recommendations</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="privacyLocation" checked><span class="slider"></span></label>
+                </div>
+                <div class="switch-row">
+                    <div>
+                        <strong>Activity status</strong>
+                        <small>Show when you are online</small>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="privacyActivity" checked><span class="slider"></span></label>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>App preferences</h3>
+                <div class="field">
+                    <label for="settingsLanguage">Language</label>
+                    <select id="settingsLanguage">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="settingsUnit">Distance unit</label>
+                    <select id="settingsUnit">
+                        <option value="km">Kilometers</option>
+                        <option value="miles">Miles</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="settingsPaymentMethod">Default payment method</label>
+                    <select id="settingsPaymentMethod">
+                        <option value="UPI">UPI</option>
+                        <option value="Card">Card</option>
+                        <option value="Wallet">Wallet</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="settingsCurrency">Currency</label>
+                    <select id="settingsCurrency">
+                        <option value="INR">₹ INR</option>
+                        <option value="USD">$ USD</option>
+                    </select>
+                </div>
+                <div class="action-list">
+                    <button type="button" class="btn btn-ghost btn-block">Download my data</button>
+                    <button type="button" class="btn btn-ghost btn-block">Sign out</button>
+                    <button type="button" class="btn btn-danger btn-block">Delete account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

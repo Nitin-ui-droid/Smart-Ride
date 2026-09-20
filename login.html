@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — RideMitra</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-auth="guest">
+
+<div class="auth-shell">
+    <div class="auth-visual">
+        <hr class="route-rule" style="top:38%;">
+        <hr class="route-rule" style="top:58%;">
+        <a href="index.html" class="brand" style="position:absolute;top:32px;left:48px;">
+            <span class="brand-mark">R</span> RideMitra
+        </a>
+
+        <div class="auth-visual-copy">
+            <span class="eyebrow">Your route, your way</span>
+            <h2>Welcome back.</h2>
+            <p>Your published rides and bookings are waiting on this dashboard.</p>
+        </div>
+
+        <div class="auth-visual-stats">
+            <div class="stat-box">
+                <strong>12k+</strong>
+                <span>active riders</span>
+            </div>
+            <div class="stat-box">
+                <strong>4.9/5</strong>
+                <span>average rating</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-form-side">
+        <div class="auth-box">
+            <h2>Log in</h2>
+            <p style="margin-bottom:26px;">Good to see you again.</p>
+
+            <form id="loginForm" novalidate>
+                <div class="field">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+                <div class="field password-field">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password" required>
+                    <button type="button" class="password-toggle" id="loginPasswordToggle">Show</button>
+                </div>
+                <div class="forgot-password-row">
+                    <a href="#" id="forgotPasswordLink">Forgot password?</a>
+                </div>
+                <div class="reset-password-panel" id="resetPasswordPanel" hidden>
+                    <div class="reset-password-heading">
+                        <span class="reset-password-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span>
+                        <div>
+                            <strong>Reset your password</strong>
+                            <span>We’ll send a secure reset link to your email.</span>
+                        </div>
+                    </div>
+                    <label for="resetEmail">Email address</label>
+                    <div class="reset-password-actions">
+                        <input type="email" id="resetEmail" placeholder="you@example.com" autocomplete="email">
+                        <button type="button" class="btn btn-secondary" id="resetPasswordBtn">Send link</button>
+                    </div>
+                    <button type="button" class="reset-cancel" id="resetCancelBtn">Cancel</button>
+                </div>
+                <div class="field-error" id="loginMessage"></div>
+                <button type="submit" class="btn btn-primary btn-block" id="loginSubmitBtn">Log in</button>
+            </form>
+
+            <p class="auth-switch">New to RideMitra? <a href="signup.html">Create an account</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

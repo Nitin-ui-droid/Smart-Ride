@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create your account — RideMitra</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-auth="guest">
+
+<div class="auth-shell">
+    <div class="auth-visual">
+        <hr class="route-rule" style="top:38%;">
+        <hr class="route-rule" style="top:58%;">
+        <a href="index.html" class="brand" style="position:absolute;top:32px;left:48px;">
+            <span class="brand-mark">R</span> RideMitra
+        </a>
+
+        <div class="auth-visual-copy">
+            <span class="eyebrow">Ride together</span>
+            <h2>Every empty seat is a trip someone else is already paying for.</h2>
+            <p>Join drivers and riders splitting the cost of routes they were taking anyway.</p>
+        </div>
+
+        <div class="auth-visual-stats">
+            <div class="stat-box">
+                <strong>14k+</strong>
+                <span>shared rides</span>
+            </div>
+            <div class="stat-box">
+                <strong>65%</strong>
+                <span>lower travel cost</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-form-side">
+        <div class="auth-box">
+            <h2>Create your account</h2>
+            <p style="margin-bottom:26px;">Takes less than a minute.</p>
+
+            <form id="signupForm" novalidate>
+                <div class="field">
+                    <label for="signupName">Full name</label>
+                    <input type="text" id="signupName" placeholder="Your name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                    <label for="signupEmail">Email address</label>
+                    <input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+                <div class="field">
+                    <label for="signupPhone">Phone number</label>
+                    <input type="tel" id="signupPhone" placeholder="10-digit number" autocomplete="tel" required>
+                </div>
+                <div class="field password-field">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="At least 6 characters" autocomplete="new-password" required>
+                    <button type="button" class="password-toggle" id="signupPasswordToggle">Show</button>
+                </div>
+                <div class="field-error" id="signupMessage"></div>
+                <button type="submit" class="btn btn-primary btn-block">Create account</button>
+            </form>
+
+            <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

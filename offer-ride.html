@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offer a ride — RideMitra</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-auth="required">
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="app-shell">
+    <aside class="side-nav" id="sideNav">
+        <a href="index.html" class="brand"><span class="brand-mark">R</span> RideMitra</a>
+        <a href="dashboard.html" class="side-link"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="find-ride.html" class="side-link"><i class="fa-solid fa-magnifying-glass"></i> Find a ride</a>
+        <a href="offer-ride.html" class="side-link"><i class="fa-solid fa-square-plus"></i> Offer a ride</a>
+        <a href="notifications.html" class="side-link"><i class="fa-regular fa-bell"></i> Notifications</a>
+        <a href="account.html" class="side-link"><i class="fa-solid fa-user"></i> Account</a>
+        <a href="settings.html" class="side-link"><i class="fa-solid fa-gear"></i> Settings</a>
+        <div class="side-foot">
+            <button class="side-link" data-logout style="width:100%;background:none;border:none;cursor:pointer;text-align:left;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+            </button>
+        </div>
+    </aside>
+
+    <main class="app-main">
+        <div class="app-topbar">
+            <div style="display:flex;align-items:center;gap:14px;">
+                <button class="mobile-menu-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+                <h2 style="margin:0;">Offer a ride</h2>
+            </div>
+            <div class="avatar-circle" data-user-initial>R</div>
+        </div>
+
+        <div class="card" style="max-width:640px;">
+            <p style="margin-bottom:24px;">List your empty seats — it stays visible to everyone until seats run out or you take it down.</p>
+
+            <form id="rideForm" novalidate>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="rideFrom">From</label>
+                        <input type="text" id="rideFrom" placeholder="Starting point" required>
+                    </div>
+                    <div class="field">
+                        <label for="rideTo">To</label>
+                        <input type="text" id="rideTo" placeholder="Destination" required>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="rideDate">Travel date</label>
+                        <input type="date" id="rideDate" required>
+                    </div>
+                    <div class="field">
+                        <label for="rideTime">Departure time</label>
+                        <input type="time" id="rideTime" required>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="rideSeats">Available seats</label>
+                        <input type="number" id="rideSeats" min="1" max="8" value="1" required>
+                    </div>
+                    <div class="field">
+                        <label for="ridePrice">Price per seat (₹)</label>
+                        <input type="number" id="ridePrice" min="0" placeholder="e.g. 150" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="vehicle">Vehicle</label>
+                    <input type="text" id="vehicle" placeholder="e.g. Honda City, White" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Publish ride</button>
+            </form>
+        </div>
+    </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
